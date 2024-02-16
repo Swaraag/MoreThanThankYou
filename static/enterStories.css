@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: 15px 'Helvetica Neue';
+    background: #92ff52
+}
+
+.storiesFormDiv {
+    margin: 80px 400px 0;
+    background-color: white;
+    box-shadow: 0 40px 200px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+h1 {
+    font-size: 45px;
+    text-decoration: underline;
+}
+
+.storiesFormDiv input {
+    border-radius: 14px;
+    border: 3px solid rgb(255, 76, 76);
+    padding: 15px;
+    display: block;
+    margin: 50px auto;
+    outline: none;
+    width: 250px;
+    transition: 0.25s;
+}
+
+.storiesFormDiv button {
+    background: none;
+    padding: 15px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+    color: black;
+    font-size: 18px;
+}
+
+.storiesFormDiv button:hover {
+    background: rgb(254, 78, 78);
+    color: white;
+}
+
+.storiesFormDiv input:focus {
+    width: 312px;
+    border: 3px solid #9600FF;
+}
