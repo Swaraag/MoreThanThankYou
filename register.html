@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>More Than Thank You Map</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/enterStories.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="register.js"></script>
     <link rel="stylesheet" type="text/css" href="static/navbar.css">
     <link rel="stylesheet" type="text/css" href="static/map.css">
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
     <style>
-        #map {
-
-            filter: blur(3px);
-        }
-    </style>
+      #map {
+          filter: blur(3px);
+      }
+  </style>
 </head>
-
 <body>
-    
-    <div class="storiesFormDiv">
-        <h1>Enter Your Stories</h1>
-        <form id="form" action="" method="GET">
-            <input autofocus type="email" id="emailAdd" name="emailAdd" autocomplete="off" required placeholder="Email Address...">
-
-            <input id="username" name="username" autocomplete="off" required placeholder = "Username...">
-
-            <input id="recUser" name="recUser" autocomplete="off" required placeholder = "Receiving User..."> 
-
-            <button type="submit" id="submit" onClick="storyInfo(this.form)">Submit</button>
-        </form>
+    <div id = "info">
+        <h1 id = "title">Register</h1>
+        <input class = "fields" type="text" id="login" required placeholder = "Username...">
+        <br>
+        <br>
+        <input class = "fields" type="password" id="password" required placeholder = "Password...">
+        <br>
+        <br>
+        <button id = "submit" onclick="submit()">Submit</button>
     </div>
     <nav class="nav">
         <input id="menu" type="checkbox">
@@ -113,8 +109,5 @@
             .addTo(map);
         }
       </script>
-
-      <script src="static/enterStories.js"></script>
 </body>
-
 </html>
