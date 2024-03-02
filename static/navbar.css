@@ -144,3 +144,14 @@ body {
     transition-delay: 0.3s;
 }
   
+.unfocus {
+  filter: blur(2px);
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.refocus {
+  filter: blur(0px);
+  opacity: 1;
+  transition: 0.5s;
+}

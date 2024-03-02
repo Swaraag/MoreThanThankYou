@@ -11,7 +11,7 @@ mapboxgl.accessToken =
   'pk.eyJ1Ijoic3dhcmFhZyIsImEiOiJjbGFpZ3JjMjMwMmRqM25wODhodHFjaXFqIn0.NhBGd2XWeKqYramdC8y8yQ';
 // title: [coordLon, coordLat, desc]
 var dict = {};
-const markerList = [
+var markerList = [
   {
     coordLat: 47.6163,
     coordLon: -122.0356,
@@ -25,12 +25,13 @@ const markerList = [
     desc: 'Helped User 3 with an assignment deliverable.',
   },
 ];
-const map = new mapboxgl.Map({
+var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
   center: [-120.7401, 47.3],
   zoom: 6.5,
 });
+
 
 for (var i = 0; i < markerList.length; i++) {
   const el = document.createElement('div');

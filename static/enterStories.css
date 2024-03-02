@@ -1,25 +1,29 @@
+
 body {
     margin: 0;
     padding: 0;
     font: 15px 'Helvetica Neue';
-    background: #92ff52
+    background: #92ff52;
+    overflow-x: hidden;
+    
 }
 
 .storiesFormDiv {
-    margin: 80px 400px 0;
     background-color: white;
     box-shadow: 0 40px 200px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
     padding-top: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
+    margin: 50px 300px;
 }
 
 h1 {
     font-size: 45px;
     text-decoration: underline;
+    margin-top: 25px;
 }
 
-.storiesFormDiv input {
+.storiesFormDiv input:not(#anonymous) {
     border-radius: 14px;
     border: 3px solid rgb(255, 76, 76);
     padding: 15px;
@@ -40,12 +44,50 @@ h1 {
     font-size: 18px;
 }
 
-.storiesFormDiv button:hover {
+.storiesFormDiv #submit:hover {
     background: rgb(254, 78, 78);
     color: white;
 }
 
-.storiesFormDiv input:focus {
-    width: 312px;
+.storiesFormDiv input:not(#anonymous):focus {
     border: 3px solid #9600FF;
+    border-radius: 20px;
 }
+
+.storiesFormDiv input:not(#anonymous):not(:focus):not(:placeholder-shown) {
+    border: 3px solid blue;
+}
+
+#anonymous {
+    appearance: none;
+    border-radius: 14px;
+    border: 3px solid rgb(210, 247, 1);
+    padding: 12px;
+    display: block;
+    margin: 50px auto 0px;
+    outline: none;
+    width: 200px;
+    transition: 0.25s;
+}
+
+.anonymousToggled { 
+    background-color: rgb(67, 67, 67) !important;
+    color: white !important;
+}
+
+#anonymous:hover {
+    background-color: rgb(67, 67, 67);
+    color: white;
+}
+
+#flexForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#leftForm {
+    background-color: white;
+}
+#rightForm {
+    background-color: white;
+} 
