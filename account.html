@@ -1,25 +1,14 @@
-<!--
-    take city or general location of users
-
-    known means have a profile on the platform, unknown means no profile, logged in means have an account 
-    scenario 1: known user, known recipient: 
-    scenario 2: unknown user, known recipient:
-    scenario 3: known user, unknown recipient:
-    scenario 4: unknown user, unknown recipient:
-    scenario 5: logged in user, known recipient: 
-
--->
 
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Enter Stories</title>
+    <title>Account</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/enterStories.css">
+    <link rel="stylesheet" type="text/css" href="static/account.css">
     <link rel="stylesheet" type="text/css" href="static/navbar.css">
     <link rel="stylesheet" type="text/css" href="static/map.css">
     <style>
@@ -46,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="/account.html">
+                <a href="#register">
                     <span>Account</span>
 
                 </a>
@@ -60,29 +49,45 @@
         </ul>
     </nav>
     <div class="nonNav">
-        <div class="storiesFormDiv" id="storiesFormDiv">
-            <h1>Enter Your Stories</h1>
-            <form id="form" action="" method="GET">
-                <button autofocus type="button" id="anonymous">Anonymous?</button>
-                <div id="flexForm">
-                    <div id="leftForm">
-                        <input autofocus type="email" id="emailAdd" name="emailAdd" autocomplete="off" required
-                        placeholder="Email Address...">
+        <div class="accountDiv">
+            <div class="registerDiv" id="registerDiv">
+                <h1>Register</h1>
+                <form id="form" action="" method="GET">
+                    <div id="flexForm">
+                        <div id="leftForm">
+                            <input autofocus type="email" id="emailAdd" name="emailAdd" autocomplete="off" required
+                            placeholder="Email Address...">
+
+                            <input autofocus type="email" id="recEmailAdd" name="recEmailAdd" autocomplete="off" required
+                            placeholder="Username...">
+                        
+                            <input autofocus type="email" id="recEmailAdd" name="recEmailAdd" autocomplete="off" required
+                            placeholder="Password...">
+                        </div>
+                    </div>
+                    <button type="submit" id="submit" onClick="storyInfo(this.form)">Submit</button>
+                    <p id="anonWarning"></p>
+                </form>
+            </div>
+            <div class="loginDiv" id="loginDiv">
+                <h1>Login</h1>
+                <form id="form" action="" method="GET">
+                    <div id="flexForm">
+                        <div id="leftForm">
+                            <input autofocus type="email" id="emailAdd" name="emailAdd" autocomplete="off" required
+                            placeholder="Email Address...">
+                        
+                            <input autofocus type="email" id="recEmailAdd" name="recEmailAdd" autocomplete="off" required
+                            placeholder="Password...">
+                        </div>
                     
-                        <input autofocus type="email" id="recEmailAdd" name="recEmailAdd" autocomplete="off" required
-                        placeholder="Receiving Email Address...">
                     </div>
-                    <div id="rightForm">
-                        <input id="username" type="text" x-webkit-speech name="username" autocomplete="off" required
-                        placeholder="Action Name...">
-    
-                        <input id="recUser" name="recUser" autocomplete="off" required placeholder="Description...">
-                    </div>
-                </div>
-                <button type="submit" id="submit" onClick="storyInfo(this.form)">Submit</button>
-                <p id="anonWarning"></p>
-            </form>
+                    <button type="submit" id="submit" onClick="storyInfo(this.form)">Submit</button>
+                    <p id="anonWarning"></p>
+                </form>
+            </div>
         </div>
+        
         <div id="map"></div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1Ijoic3dhcmFhZyIsImEiOiJjbGFpZ3JjMjMwMmRqM25wODhodHFjaXFqIn0.NhBGd2XWeKqYramdC8y8yQ';
