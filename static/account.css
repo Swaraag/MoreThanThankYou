@@ -23,7 +23,7 @@ body {
 
 h1 {
     font-size: 45px;
-    margin-top: 8%;
+    margin-top: 10%;
 }
 
 .accountDiv input {
@@ -54,7 +54,7 @@ h1 {
     font-size: 18px;
 }
 
-.accountDiv #submit:hover {
+.accountDiv button[type="submit"]:hover {
     background: rgb(254, 78, 78);
     color: white;
 }
@@ -68,15 +68,3 @@ h1 {
 .storiesFormDiv input:not(:focus):not(:placeholder-shown) {
     border: 3px solid blue;
 }
-
-#flexForm {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-#leftForm {
-    background-color: white;
-}
-#rightForm {
-    background-color: white;
-} 

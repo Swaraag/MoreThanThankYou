@@ -1,11 +1,14 @@
+document.getElementById("enterStoriesForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-function storyInfo(form) {
-    var email = form.emailAdd.value;
-    var username = form.username.value;
-    var recUser = form.recUser.value;
-    window.location.href = "/map.html"
-}
+  var formData = new FormData(e.target);
 
+  for (var pair of formData.entries()) {
+      alert(pair[1])
+      //console.log(pair[0] + ": " + pair[1]);
+  }
+
+})
 var anonymousBtn = document.getElementById('anonymous');
 anonymousBtn.addEventListener("click", toggleAnon);
 
