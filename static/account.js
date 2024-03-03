@@ -7,7 +7,6 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
         alert(pair[1])
         //console.log(pair[0] + ": " + pair[1]);
     }
-
 })
 
 document.getElementById("loginForm").addEventListener("submit", function (e) {

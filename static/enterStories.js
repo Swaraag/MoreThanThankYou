@@ -15,19 +15,21 @@ anonymousBtn.addEventListener("click", toggleAnon);
 var anonWarning = document.getElementById('anonWarning');
 var storiesFormDiv = document.getElementById('storiesFormDiv');
 
-var leftForm = document.getElementById('leftForm')
+var leftForm = document.getElementById('leftForm');
+var parentForm = document.getElementById("flexForm");
 var anonState = false;
 
 function toggleAnon() {
   anonState = !anonState
   if (anonState == true) {
-    leftForm.style.display = 'none';
+
+    parentForm.removeChild(leftForm);
     anonymousBtn.classList.toggle("anonymousToggled");
     anonWarning.innerHTML = "Being anonymous will mean your action cannot be verified and is not eligible for reward.";
     storiesFormDiv.style.paddingBottom = '47px';
   }
   else {
-    leftForm.style.display = 'inline';
+    parentForm.insertBefore(leftForm, parentForm.firstChild)
     anonymousBtn.classList.toggle("anonymousToggled");
     anonWarning.innerHTML = ""
     storiesFormDiv.style.paddingBottom = '80px';
@@ -38,7 +40,7 @@ function toggleAnon() {
 
 const checkbox = document.getElementById('menu');
 const content = document.getElementById('nonNav');
-var childElements = content.querySelectorAll('*');
+var childElements = document.getElementsByTagName('*');
 checkbox.addEventListener('change', function() {
   if (checkbox.checked) {
     alert(childElements)
