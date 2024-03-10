@@ -1,3 +1,31 @@
-body {
-    overflow-x: hidden
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.panelOne {
+    background-color: rgb(255, 179, 0);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.panelOne h1 {
+    background-color: white;
+    width: 50%;
+}
+
+.panelTwo {
+    height: 500px;
+    background-color: green;
+}
+
+.panelThree {
+    height: 200px;
+    background-color: blue;
+}
+
+.footers {
+    background-color: red;
 }

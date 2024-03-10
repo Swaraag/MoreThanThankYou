@@ -8,7 +8,7 @@ body {
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
   max-width: 85px;
   max-height: 0px;
   bottom: 75px;

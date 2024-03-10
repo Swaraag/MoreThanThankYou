@@ -43,9 +43,7 @@ const content = document.getElementById('nonNav');
 var childElements = document.getElementsByTagName('*');
 checkbox.addEventListener('change', function() {
   if (checkbox.checked) {
-    alert(childElements)
     childElements.forEach(function(child) {
-        alert(child)
         child.classList.remove('refocus')
         child.classList.add('unfocus')
     });
