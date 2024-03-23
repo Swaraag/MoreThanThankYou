@@ -11,25 +11,41 @@ body {
     box-shadow: 0 40px 200px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
     padding-top: 30px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     margin: 50px 300px;
+}
+
+input.invalid {
+    background-color: #ffdddd;
+}
+
+.formTab {
+    display: none;
 }
 
 h1 {
     font-size: 45px;
     text-decoration: underline;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
-.storiesFormDiv input:not(#anonymous) {
+.storiesFormDiv input {
     border-radius: 14px;
-    border: 3px solid rgb(255, 76, 76);
+    border: 3px solid rgb(255, 174, 76);
     padding: 15px;
     display: block;
-    margin: 50px auto;
     outline: none;
     width: 250px;
     transition: 0.25s;
+}
+
+.storiesFormDiv input {
+    margin: 30px auto 0px;
+}
+
+#autocomplete {
+    margin: 40px auto;
+    width: 275px !important;
 }
 
 .storiesFormDiv button {
@@ -42,17 +58,17 @@ h1 {
     font-size: 18px;
 }
 
-.storiesFormDiv #submit:hover {
+button:hover {
     background: rgb(254, 78, 78);
     color: white;
 }
 
-.storiesFormDiv input:not(#anonymous):focus {
+.storiesFormDiv input:focus {
     border: 3px solid #9600FF;
     border-radius: 20px;
 }
 
-.storiesFormDiv input:not(#anonymous):not(:focus):not(:placeholder-shown) {
+.storiesFormDiv input:not(:focus):not(:placeholder-shown) {
     border: 3px solid blue;
 }
 
@@ -62,7 +78,7 @@ h1 {
     border: 3px solid rgb(210, 247, 1);
     padding: 12px;
     display: block;
-    margin: 50px auto 0px;
+    margin: 40px auto 0px;
     outline: none;
     width: 200px;
     transition: 0.25s;
@@ -89,3 +105,47 @@ h1 {
 #rightForm {
     background-color: white;
 } 
+
+.googleMap {
+    width: 400px;
+}
+
+.addressContainer {
+    display: flex;
+    justify-content: space-around;
+
+}
+.half-input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.half-input-container input {
+    width: 105px !important;
+}
+
+.formStepDiv {
+    margin-top: 30px;
+}
+
+.formStep {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.formStep.active {
+    opacity: 1;
+}
+
+.formStep.finish {
+    background-color: #04AA6D;
+}
+.pageMvmtButton {
+    margin-top: 20px;
+}

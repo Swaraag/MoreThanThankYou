@@ -14,9 +14,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Populate user list
                 data.forEach(user => {
 
-                    const li = document.createElement('li');
-                    li.textContent = user.username;
-                    userList.appendChild(li);
+                    const email = document.createElement('li');
+                    email.textContent = "email: " + user.email;
+                    userList.appendChild(email);
+
+                    const username = document.createElement('li');
+                    username.textContent = "username: " + user.username;
+                    userList.appendChild(username);
+
+                    const empty = document.createElement('li');
+                    userList.appendChild(empty)
+
+                    
                 });
             })
             .catch(error => console.error('Error:', error));

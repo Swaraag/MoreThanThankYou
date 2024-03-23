@@ -1,4 +1,5 @@
 <!--
+    GOOGLE MAPS API KEY: AIzaSyCTWxRnBmBSHDEGZxBWFbYTtpsp0yXqb_A
     take city or general location of users
 
     known means have a profile on the platform, unknown means no profile, logged in means have an account 
@@ -27,6 +28,7 @@
             filter: blur(3px);
         }
     </style>
+    <script src="static/enterStoriesMap.js"></script>
 </head>
 
 <body>
@@ -59,30 +61,55 @@
             </li>
         </ul>
     </nav>
+    
     <div class="nonNav">
         <div class="storiesFormDiv" id="storiesFormDiv">
-            <h1>Enter Your Stories</h1>
             <form id="enterStoriesForm" action="" method="GET">
-                <button autofocus type="button" id="anonymous">Anonymous?</button>
-                <div id="flexForm">
-                    <div id="leftForm">
-                        <input autofocus type="email" id="emailAdd" name="emailAdd" autocomplete="off" required
-                        placeholder="Email Address...">
-                    
-                        <input autofocus type="email" id="recEmailAdd" name="recEmailAdd" autocomplete="off" required
-                        placeholder="Receiving Email Address...">
-                    </div>
-                    <div id="rightForm">
-                        <input id="username" type="text" x-webkit-speech name="username" autocomplete="off" required
-                        placeholder="Action Name...">
-    
-                        <input id="recUser" name="recUser" autocomplete="off" required placeholder="Description...">
-                    </div>
+                <h1>Enter Your Story</h1>
+                
+                <div class="formTab">
+                    <input autofocus type="email" id="emailAdd" name="emailAdd" autocomplete="off" required
+                    placeholder="Email Address...">
+                        
+                    <input autofocus type="email" id="recEmailAdd" name="recEmailAdd" autocomplete="off" required 
+                    placeholder="Receiving Email Address...">
                 </div>
-                <button type="submit" id="submit">Submit</button>
-                <p id="anonWarning"></p>
+                
+                <div class="formTab">
+                    <input id="actionName" type="text" x-webkit-speech name="actionName" autocomplete="off" required
+                    placeholder="Action Name...">
+    
+                    <input id="actionDesc" name="actionDesc" autocomplete="off" required placeholder="Description...">
+                </div>
+                <div class="formTab">
+                    <div class="addressContainer">
+                        <div class="panel">
+                          <input type="text" name="address" placeholder="Address" id="location-input"/>
+                          <input type="text" name="city" placeholder="City" id="locality-input"/>
+                          <div class="half-input-container">
+                            <input type="text" name="stateProvince" class="half-input" placeholder="State/Province" id="administrative_area_level_1-input"/>
+                            <input type="text" name="zipPostalCode" class="half-input" placeholder="Zip/Postal code" id="postal_code-input"/>
+                          </div>
+                          <input type="text" name="country" placeholder="Country" id="country-input"/>
+                        </div>
+                        <div class="googleMap" id="gmp-map"></div>
+                      </div>
+                      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTWxRnBmBSHDEGZxBWFbYTtpsp0yXqb_A&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cAB" async defer></script>
+                </div>
+                <div class="formStepDiv">
+                    <span class="formStep"></span>
+                    <span class="formStep"></span>
+                    <span class="formStep"></span>
+                </div>
+                <div class="pageMvmtButton">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+                
             </form>
         </div>
+            
+    </div>
         <div id="map"></div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1Ijoic3dhcmFhZyIsImEiOiJjbGFpZ3JjMjMwMmRqM25wODhodHFjaXFqIn0.NhBGd2XWeKqYramdC8y8yQ';
