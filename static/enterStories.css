@@ -48,7 +48,7 @@ h1 {
     width: 275px !important;
 }
 
-.storiesFormDiv button {
+.storiesFormDiv button:not(#currentLoc) {
     background: none;
     padding: 15px 50px;
     border-radius: 10px;
@@ -58,7 +58,7 @@ h1 {
     font-size: 18px;
 }
 
-button:hover {
+button:hover:not(#currentLoc) {
     background: rgb(254, 78, 78);
     color: white;
 }
@@ -148,4 +148,17 @@ button:hover {
 }
 .pageMvmtButton {
     margin-top: 20px;
+}
+
+#currentLoc {
+    background-color: transparent;
+    color: blue;
+    border: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#currentLoc:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

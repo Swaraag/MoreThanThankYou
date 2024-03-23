@@ -55,7 +55,6 @@ function formSubmitted() {
     // Handle errors
     console.error('Error:', error);
   });
- 
   
 }
 
@@ -84,6 +83,7 @@ function showTab(n) {
 function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("formTab");
+
   // Exit the function if any field in the current tab is invalid:
   if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
@@ -108,28 +108,46 @@ const validateEmail = (email) => {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
+  //var x, y, i, valid = true;
+
+  var valid = true;
   x = document.getElementsByClassName("formTab");
   y = x[currentTab].getElementsByTagName("input");
+
+  var invalTextElem = document.getElementById("invalText")
+  if (invalTextElem) {
+      invalTextElem.remove();
+  }
 
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
+    if (y[i].value == "" || (y[i].getAttribute('type') === 'email' && !validateEmail(y[i].value))) {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
+
+      var invalBlankDiv = document.createElement('p')
+      invalBlankDiv.id = "invalText"
+      invalBlankDiv.style.color = "red"
+
+      invalBlankDiv.appendChild(document.createTextNode("Fields may have been left blank or are invalid."));
+
+      x[currentTab].appendChild(invalBlankDiv)
+
       // and set the current valid status to false:
       valid = false;
-    }
-    if (y[i].getAttribute('type') === 'email') {
-      if (!validateEmail(y[i].value)) {
-        y[i].className += " invalid";
-        valid = false;
-      }
+      return valid;
     }
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
+    var invalidElems = document.getElementsByClassName("invalid")
+    var invalidElemArray = Array.from(invalidElems);
+    if (invalidElemArray.length > 0) {
+      invalidElemArray.forEach(function(invalidElem) {
+        invalidElem.classList.remove("invalid");
+    });
+    }
     document.getElementsByClassName("formStep")[currentTab].className += " finish";
   }
   return valid; // return the valid status

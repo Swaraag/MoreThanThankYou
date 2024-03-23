@@ -17,7 +17,7 @@
         <label for="menu">Menu</label>
         <ul style="list-style: none" class="menu">
             <li>
-                <a href="home.html">
+                <a href="index.html">
                     <span>Home</span>
 
                 </a>
@@ -45,38 +45,6 @@
 
         <div id="map"></div>
         <script src="static/map.js"></script>
-        <script>
-            const checkbox = document.getElementById('menu');
-            const content = document.getElementById('map');
-
-            checkbox.addEventListener('change', function () {
-                if (checkbox.checked) {
-                    content.classList.remove('refocus');
-                    content.classList.add('unfocus');
-                    map.boxZoom.disable();
-                    map.scrollZoom.disable();
-                    map.dragPan.disable();
-                    map.dragRotate.disable();
-                    map.keyboard.disable();
-                    map.doubleClickZoom.disable();
-                    map.touchZoomRotate.disable();
-                    map.getCanvas().style.cursor = 'default';
-                } else {
-                    content.classList.remove('unfocus');
-                    content.classList.add('refocus');
-                    map.setInteractive = true;
-                    map.boxZoom.enable();
-                    map.scrollZoom.enable();
-                    map.dragPan.enable();
-                    map.dragRotate.enable();
-                    map.keyboard.enable();
-                    map.doubleClickZoom.enable();
-                    map.touchZoomRotate.enable();
-                    map.getCanvas().style.cursor = 'grab';
-                }
-            });
-
-        </script>
 
     </div>
 </body>

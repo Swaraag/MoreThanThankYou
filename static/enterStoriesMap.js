@@ -7,6 +7,15 @@ const CONFIGURATION = {
   "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":true,"ctaControl":false}
 };
 
+function currentLocation(event) {
+  event.preventDefault()
+  alert("HIII")
+
+// Attach an event listener to the button
+}
+button.addEventListener("click", currentLocation);
+
+
 const SHORT_NAME_ADDRESS_COMPONENT_TYPES =
     new Set(['street_number', 'administrative_area_level_1', 'postal_code']);
 

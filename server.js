@@ -34,6 +34,16 @@ app.get('/getUsers', (req, res) => {
     });
 });
 
+app.get('/getStories', (req, res) => {
+    const sql = 'SELECT * FROM stories';
+    db.query(sql, (err, result) => {
+        if (err) {
+            throw err;
+        }
+        res.json(result);
+    });
+});
+
 app.use(express.json());
 
 app.post('/addUser', (req, res) => {
@@ -49,15 +59,7 @@ app.post('/addUser', (req, res) => {
 });
 
 app.post('/addStory', (req, res) => {
-  // const { actionName, actionDesc } = req.body;
-  // const sql = 'INSERT INTO stories (actionName, actionDesc) VALUES (?, ?);';
-  // db.query(sql, [actionName, actionDesc], (err, result) => {
-  //     if (err) {
-  //         res.status(500).json({ error: err.message });
-  //     } else {
-  //         res.status(201).json({ message: 'User added successfully' });
-  //     }
-  // });
+
   const { email, recEmail, actionName, actionDesc, locationLat, locationLon} = req.body;
   const sql = 'INSERT INTO stories (email, recEmail, actionName, actionDesc, locationLat, locationLon) VALUES (?, ?, ?, ?, ?, ?);';
   db.query(sql, [email, recEmail, actionName, actionDesc, locationLat, locationLon], (err, result) => {
