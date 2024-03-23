@@ -1,5 +1,3 @@
-// NEXT STEPS: LAT AND LON ACCESSIBLE BUT NEED TO PUT ALL OF THIS INFORMATION INTO THE MYSQL DATABASE, SO THAT IT CAN BE ADDED INTO THE MAP
-
 function formSubmitted() {
   var inputVals = document.getElementsByTagName("input")
   
@@ -162,3 +160,71 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+var currentLocBtn = document.getElementById("currentLoc")
+function currentLocation(event) {
+  event.preventDefault()
+
+  var addressInput = document.getElementById("location-input")
+  var cityInput = document.getElementById("locality-input")
+  var stateProvinceInput = document.getElementById("administrative_area_level_1-input")
+  var zipPostalCodeInput = document.getElementById("postal_code-input")
+  var countryInput = document.getElementById("country-input")
+
+  addressInput.value = "One moment..."
+  cityInput.value = "One moment..."
+  stateProvinceInput.value = "One moment..."
+  zipPostalCodeInput.value = "One moment..."
+  countryInput.value = "One moment..."
+
+  if ("geolocation" in navigator) {
+    // Use the getCurrentPosition method to get the current position
+    navigator.geolocation.getCurrentPosition(function(position) {
+        // Extract latitude and longitude from the position object
+        var userLat = position.coords.latitude;
+        var userLon = position.coords.longitude;
+
+        // Construct the URL for the reverse geocoding API
+        
+
+        // Send a request to the Geocoding API
+        fetch("https://geocode.maps.co/reverse?lat="+userLat+"&lon="+userLon+"&api_key=65f62fc1294f2241038389cgi6f6e00")
+            .then(response => response.json())
+            .then(data => {
+              addressInput.value = data["address"]["house_number"] + " " + data["address"]["road"]
+              cityInput.value = data["address"]["town"]
+              stateProvinceInput.value = data["address"]["state"]
+              zipPostalCodeInput.value = data["address"]["postcode"]
+              countryInput.value = data["address"]["country"]
+              console.log(data["address"])
+                //addressInput.innerHTML = data[0]["lat"]
+            })
+            .catch(error => {
+                // Handle errors
+                console.error("Error fetching address:", error);
+            });
+    }, function(error) {
+        // Handle errors
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                console.error("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                console.error("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                console.error("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                console.error("An unknown error occurred.");
+                break;
+        }
+    });
+} else {
+    // Geolocation API is not supported in the browser
+    console.error("Geolocation is not supported in your browser.");
+}
+
+// Attach an event listener to the button
+}
+currentLocBtn.addEventListener("click", currentLocation);

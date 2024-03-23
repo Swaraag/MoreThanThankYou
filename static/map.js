@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       function mapCreation() {
 
-        markerList.push({coordLat: user.locationLat, coordLon: user.locationLon, title: user.actionName, desc: user.actionDesc})
+        markerList.push({coordLat: user.locationLat, coordLon: user.locationLon, title: user.actionName, desc: user.actionDesc, email: user.email, recEmail: user.recEmail})
       mapboxgl.accessToken =
         'pk.eyJ1Ijoic3dhcmFhZyIsImEiOiJjbGFpZ3JjMjMwMmRqM25wODhodHFjaXFqIn0.NhBGd2XWeKqYramdC8y8yQ';
       // title: [coordLon, coordLat, desc]
@@ -32,22 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
           .setPopup(
             new mapboxgl.Popup({ className: "popup" }) // add popups
               .setHTML(
-                `<h1>${markerList[i].title}</h1><p>${markerList[i].desc}</p>`
+                `<h1>${markerList[i].title}</h1><p>${markerList[i].desc}</p><h4>Done by ${markerList[i].email} to ${markerList[i].recEmail}</h4>`
               )
           )
           .addTo(map);
       }
-
-      function createPopUp(currentFeature) {
-          const popUps = document.getElementsByClassName('mapboxgl-popup');
-          /** Check if there is already a popup on the map and if so, remove it */
-          if (popUps[0]) popUps[0].remove();
-        
-          const popup = new mapboxgl.Popup({ closeOnClick: false })
-            .setLngLat(currentFeature.geometry.coordinates)
-            .setHTML(`<h3>Sweetgreen</h3><h4>${currentFeature.properties.address}</h4>`)
-            .addTo(map);
-        }
 
         const checkbox = document.getElementById('menu');
         const content = document.getElementById('map');

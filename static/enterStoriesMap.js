@@ -7,13 +7,6 @@ const CONFIGURATION = {
   "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":true,"ctaControl":false}
 };
 
-function currentLocation(event) {
-  event.preventDefault()
-  alert("HIII")
-
-// Attach an event listener to the button
-}
-button.addEventListener("click", currentLocation);
 
 
 const SHORT_NAME_ADDRESS_COMPONENT_TYPES =
