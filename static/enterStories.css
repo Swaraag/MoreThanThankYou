@@ -59,8 +59,9 @@ h1 {
 }
 
 button:hover:not(#currentLoc) {
-    background: rgb(254, 78, 78);
+    background: #4366c5;
     color: white;
+    border-color: transparent;
 }
 
 .storiesFormDiv input:focus {

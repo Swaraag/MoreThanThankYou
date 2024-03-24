@@ -1,5 +1,7 @@
 // command to open aws rds mysql db hhhhf........≥...in terminal: mysql -h more-than-thank-you-v1.cjc080s2o7gm.us-east-1.rds.amazonaws.com -u admin -p
 // password: BkGoqRM6XRLzoey4LIAq
+
+// key pair for EC2 instance: moreThanThankYouProj
 const express = require('express');
 const mysql = require('mysql');
 const path = require('path')
