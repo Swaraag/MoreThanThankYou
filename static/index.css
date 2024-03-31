@@ -63,8 +63,6 @@
  #slides {
     padding: 10px;
     background: #fff;
-    position: relative;
-
     scroll-snap-type: x mandatory;
     -ms-verrflow-style: none;
     overflow: -moz-scrollbars-none;
@@ -85,16 +83,18 @@
 
 #slide3:checked~#slides .inner {
     margin-left: -200%;
-}
-
-/* Remove styles for slide4 */
-
-#slides .inner {
+ }
+ 
+ #slide4:checked~#slides .inner {
+    margin-left: -300%;
+ }
+ 
+ #slides .inner {
     transition: margin-left 800ms;
-    width: 300%; /* Adjusted for three slides */
+    width: 400%;
     line-height: 0;
     height: 400px;
-}
+ }
  
  #slides .slide {
     width: 33.3333%;

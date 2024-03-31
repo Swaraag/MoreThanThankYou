@@ -1,5 +1,6 @@
 * {
   padding: 0;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 .nav {
@@ -8,7 +9,6 @@
   max-height: 0px;
   bottom: 75px;
   right: calc(50% - 42.5px);
-  
 }
 
 .nav [type="checkbox"] {
