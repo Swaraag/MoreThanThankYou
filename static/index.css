@@ -1,9 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
- }
- 
+
  #title {
     margin-left: 7.9%;
     font-size: 20px;
@@ -13,9 +8,16 @@
     position: absolute;
     font-family: "Nanum Gothic", sans-serif;
     width: 150px;
-    z-index: 9999999;
     line-height: 0.7cm;
     color: #4366c5;
+ }
+ 
+ body {
+    overflow-x: hidden;
+ }
+ * {
+    padding: 0;
+    margin: 0;
  }
  
  #panel1 {
@@ -62,7 +64,7 @@
     padding: 10px;
     background: #fff;
     position: relative;
-    z-index: 1;
+
     scroll-snap-type: x mandatory;
     -ms-verrflow-style: none;
     overflow: -moz-scrollbars-none;
@@ -110,7 +112,7 @@
     margin: -180px 0 0 0;
     width: 100%;
     height: 50px;
-    z-index: 3;
+
     position: relative;
  }
  
@@ -165,12 +167,11 @@
     position: absolute;
     margin-left: 5%;
     margin-top: 8%;
-    z-index: 100000000;
+
  }
  
  #right {
     position: absolute;
-    z-index: 100000000000;
     margin-left: 91%;
     margin-top: 8%;
  }
@@ -281,7 +282,7 @@
     position: absolute;
     font-family: "Nanum Gothic", sans-serif;
     color: #3a3b3c;
-    z-index: 1000000000000;
+
  }
  
  #globe {
@@ -562,7 +563,7 @@
     }
     #name {
         margin-left: 325px;
-        z-index: 100000000;
+
         width: 100px;
         text-align: center;
     }
