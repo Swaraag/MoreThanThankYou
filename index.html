@@ -16,11 +16,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">  
 </head>
 <body>
-  
+  <nav class="nav">
+    <input id="menu" type="checkbox">
+    <label for="menu">Menu</label>
+    <ul style="list-style: none" class="menu">
+        <li>
+            <a href="index.html">
+                <span>Home</span>
+
+            </a>
+        </li>
+        <li>
+            <a href="map.html">
+                <span>Map</span>
+            </a>
+        </li>
+        <li>
+            <a href="account.html">
+                <span>Account</span>
+
+            </a>
+        </li>
+        <li>
+            <a href="enterStories.html">
+                <span>Submit</span>
+
+            </a>
+        </li>
+    </ul>
+  </nav>
+  <div id="nonNav">
     <div id="top">
-        <img src="images/Graphic.png" id="logotop"> 
-        <h1 id="title">More Than Thank You</h1>
-        <h2 id="name">Account Name</h2>
+      <img src="images/Graphic.png" id="logotop"> 
+      <h1 id="title">More Than Thank You</h1>
+      <h2 id="name">Account Name</h2>
     </div>    
     <div id = "everything">
         <div id="panel1">
@@ -103,6 +132,8 @@
         <div id = "last">
         </div>
     </div>
+  </div>
+    
 
     <script src="static/index.js"></script>
     
