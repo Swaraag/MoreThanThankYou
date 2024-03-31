@@ -97,7 +97,7 @@
  }
  
  #slides .slide {
-    width: 33.3333%;
+    width: 25%;
     float: left;
     display: flex;
     justify-content: center;
@@ -248,7 +248,7 @@
  }
  
  #comic1 {
-    width: 700px;
+    width: 650px;
  }
  
  #comic2 {
