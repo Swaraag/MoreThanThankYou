@@ -1,11 +1,11 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
   fetch('/getStories')
   .then(response => response.json())
   .then(data => {
     var markerList = []
+
+    //markerList = getStoCSV(markerList)
     // Populate user list
     data.forEach(user => {
 

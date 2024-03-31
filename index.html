@@ -1,71 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/map.css">
-    <link rel="stylesheet" type="text/css" href="static/navbar.css">
-    <link rel="stylesheet" type="text/css" href="static/home.css">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Than Thank You</title>
+    <link rel="stylesheet" type="text/css" href="static/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">  
 </head>
-
 <body>
-    <div id="nonNav">
-      <div class="panelOne">
-        <h1>Giving Back To The Community</h1>
-        <div>
-          <button id="userButton">HI</button>
+    <div id="top">
+        <img src="images/Graphic.png" id="logotop"> 
+        <h1 id="title">More Than Thank You</h1>
+        <h2 id="name">Account Name</h2>
+    </div>    
+    <div id = "everything">
+        <div id="panel1">
+            <h2 id = "description">
+                On average, humans say thank you about <b><span style="font-size: 35px;">80 BILLION</span></b> times a day, around the world. What if we could turn these into something more, and foster real connections? This is #MoreThanThankYou.
+            </h2>
+            <img id = "globe" src="images/Asset 1@2x.png">
         </div>
-      </div>
-      <div class="panelTwo">
-        <h1>HII</h1>
-        <ul id="userList">
-
-        </ul>
-      </div>
-      <div class="panelThree">
-        <h1> TEXT </h1>
-      </div>
-      <div class="footers">
-        <h1> TEXT </h1>
-      </div>
-
+        <br>
+        <div id="slideshow">
+            <img id="left" src="images/back.png" class="arrows">
+            <img id="right" src="images/image.png" class="arrows">
+            <div id="slider">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+                <input type="radio" name="slider" id="slide4">
+                <div id="slides">
+                    <div id="overflow">
+                        <div class="inner">
+                            <div class="slide slide_1">
+                                <div class="slide-content">
+                                    <img id = "comic1" src="images/Comic 1.png" class = "images">
+                                </div>
+                            </div>
+                            <div class="slide slide_2">
+                                <div class="slide-content">
+                                    <img id = "comic2" src="images/comic-fourpanel.jpeg" class = "images">
+                                </div>
+                            </div>
+                            <div class="slide slide_3">
+                                <div class="slide-content">
+                                    <img src="images/Oven.png" class = "images">
+                                </div>
+                            </div>
+                            <div class="slide slide_4">
+                                <div class="slide-content">
+                                    <img src="images/Oven.png" class = "images">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="controls">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                </div>
+                <div id="bullets">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                </div>
+            </div>
+        </div>
+        <div id = "volunteer">
+            <h1 id = "voltitle">Volunteer With Us</h1>
+            <br>
+            <br>
+            <br>
+            <div id = "fleximages">
+                <img src="images/Inclusion.png" id = "inclusion">
+                <img src = "images/Community.png" id = "community">
+                <img src="images/Gratitude.png" id = "gratitude">
+            </div>
+            <br>
+            <div class="flex-container" id="list">
+                <h3 id="list1" class="lists">• Creates kindness and fosters inclusivity in our communities, as we build connections</h3>
+                <h3 id="list2" class="lists">• Gives you an opportunity to start a chapter in your school, your city, or become a core volunteer in our group</h3>
+                <h3 id="list3" class="lists">• Helps anyone to practice gratitude and kindness in their everyday lives</h3>
+            </div>        
+            <br>    
+            <br>
+            <a href = "https://docs.google.com/forms/d/e/1FAIpQLSfrPY0oSWCmxO2qZEwlyK_ySoApigBfPJgDmFTl3rqS_xKJ_w/viewform" target="_blank">
+                <button id = "signup">Sign Up</button>
+            </a>    
+        </div>
+        <div id = "last">
+        </div>
     </div>
+
+    <script src="static/index.js"></script>
     
-    <script src="static/home.js"></script>
-    <nav class="nav">
-        <input id="menu" type="checkbox">
-        <label for="menu">Menu</label>
-        <ul style="list-style: none" class="menu">
-          <li>
-            <a href="index.html">
-              <span>Home</span>
-             
-            </a>
-          </li>
-          <li>
-            <a href="map.html">
-              <span>Map</span>
-            </a>
-          </li>
-          <li>
-            <a href="account.html">
-              <span>Account</span>
-
-            </a>
-          </li>
-          <li>
-            <a href="enterStories.html">
-              <span>Submit</span>
-
-            </a>
-          </li>
-        </ul>
-      </nav>
-      
+    
 </body>
-
 </html>
