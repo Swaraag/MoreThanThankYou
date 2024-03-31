@@ -77,29 +77,27 @@
  
  #slide1:checked~#slides .inner {
     margin-left: 0;
- }
- 
- #slide2:checked~#slides .inner {
+}
+
+#slide2:checked~#slides .inner {
     margin-left: -100%;
- }
- 
- #slide3:checked~#slides .inner {
+}
+
+#slide3:checked~#slides .inner {
     margin-left: -200%;
- }
- 
- #slide4:checked~#slides .inner {
-    margin-left: -300%;
- }
- 
- #slides .inner {
+}
+
+/* Remove styles for slide4 */
+
+#slides .inner {
     transition: margin-left 800ms;
-    width: 400%;
+    width: 300%; /* Adjusted for three slides */
     line-height: 0;
     height: 400px;
- }
+}
  
  #slides .slide {
-    width: 25%;
+    width: 33.3333%;
     float: left;
     display: flex;
     justify-content: center;
@@ -173,7 +171,7 @@
  #right {
     position: absolute;
     margin-left: 91%;
-    margin-top: 8%;
+    margin-top: 7.6%;
  }
  
  .images {
@@ -277,7 +275,7 @@
  
  #name {
     width: 500px;
-    margin-left: 89%;
+    margin-left: 87%;
     margin-top: 2.5%;
     position: absolute;
     font-family: "Nanum Gothic", sans-serif;
@@ -339,12 +337,14 @@
     padding-bottom: 50px;
  }
  
- #fleximages {
+#fleximages{
     display: flex;
     flex-direction: row;
-    width: 1250px;
-    gap: 375px;
+    gap: 400px;
     margin-left: 240px;
+ }
+ .images{
+    width: 150px;
  }
  #billion{
     font-size: 35px;
@@ -534,7 +534,7 @@
  
     #panel1 {
         margin-top: 25%;
-        padding-bottom: 60%;
+        padding-bottom: 65%;
     }
  
     .flex-container {
@@ -560,16 +560,13 @@
     }
  
     #title {
-        margin-left: 23%;
+        margin-left: 26%;
         margin-top: 3%;
     }
     #name {
-        margin-left: 325px;
-
+        margin-left: 300px;
         width: 100px;
         text-align: center;
-        margin-right: 20px;
-        padding-right: 100%;
         font-size: 15px;
         margin-top: 4%;
     }
@@ -579,20 +576,21 @@
     }
  
     #globe {
-        width: 150px;
-        margin-left: 265px;
+        width: 135px;
+        margin-left: 260px;
         margin-top: 60px;
     }
  
     #fleximages {
         flex-direction: column;
-        width: 100px;
         position: absolute;
-        gap: 35px;
+        gap: 60px;
         margin-left: 300px;
         margin-top: 20px;
     }
- 
+    .images{
+        width: 85px;
+    }
     #voltitle {
         margin-left: 75px;
     }
@@ -611,5 +609,8 @@
     }
     #billion{
         font-size: 20px;
+    }
+    #comic1{
+        width: 260px;
     }
  }
