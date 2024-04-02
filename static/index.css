@@ -217,7 +217,6 @@
     background-color: #ff3c00;
     color: white;
  }
- 
  #description {
     position: absolute;
     width: 650px;
@@ -252,7 +251,7 @@
  }
  
  #comic2 {
-    width: 775px;
+    width: 50px;
  }
  
  #logotop {
@@ -560,7 +559,7 @@
     }
  
     #title {
-        margin-left: 26%;
+        margin-left: 25%;
         margin-top: 3%;
     }
     #name {
