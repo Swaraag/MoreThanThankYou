@@ -10,15 +10,14 @@ body {
 .accountDiv {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 5%;
-    height: 500px;
+    margin-top: 150px;
+
 }
 
 .accountDiv > * {
     background-color: white;
     box-shadow: 0 40px 200px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
-    padding-bottom: 80px;
     width: 35%;
 }
 
@@ -33,8 +32,13 @@ h1 {
     padding: 15px;
     display: block;
     outline: none;
-    width: 250px;
-    transition: 0.25s;
+    width: 70%;
+    transition: border 0.25s, border-radius 0.25s;
+}
+
+.accountDiv input:focus {
+    border: 3px solid #9600FF;
+    border-radius: 20px;
 }
 
 .registerDiv input {
@@ -53,6 +57,7 @@ h1 {
     transition: 0.25s;
     color: black;
     font-size: 18px;
+    margin-bottom: 40px;
 }
 
 .accountDiv button[type="submit"]:hover {
@@ -60,12 +65,27 @@ h1 {
     color: white;
 }
 
-.accountDiv input:focus {
-    border: 3px solid #9600FF;
-    border-radius: 20px;
-    width: 300px;
-}
+
 
 .storiesFormDiv input:not(:focus):not(:placeholder-shown) {
     border: 3px solid blue;
+}
+
+@media screen and (max-width: 900px) {
+    .accountDiv {
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+        margin-top: 50px;
+    }
+    .accountDiv > * {
+        width: 60%;
+    }
+    /* HAMBURGER MENU */
+}
+
+@media screen and (max-width: 650px) {
+    .accountDiv > * {
+        width: 80%;
+    }
 }

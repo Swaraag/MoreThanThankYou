@@ -8,8 +8,8 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/account.css">
     <link rel="stylesheet" type="text/css" href="static/navbar.css">
+    <link rel="stylesheet" type="text/css" href="static/account.css">
     <link rel="stylesheet" type="text/css" href="static/map.css">
     <style>
         #map {
@@ -19,9 +19,13 @@
 </head>
 
 <body>
+
     <nav class="nav">
         <input id="menu" type="checkbox">
-        <label for="menu">Menu</label>
+        <label for="menu">
+            <img src="/images/hamburger.png" width="0px" height="0px" alt="" />
+            Menu
+        </label>
         <ul style="list-style: none" class="menu">
             <li>
                 <a href="index.html">
@@ -47,6 +51,7 @@
                 </a>
             </li>
         </ul>
+        <div class="navWhite"></div>
     </nav>
     <div class="nonNav">
         <div class="accountDiv">
@@ -137,6 +142,7 @@
 
     </div>
     <script src="static/account.js"></script>
+    <script src="static/navbar.js"></script>
 
 </body>
 
